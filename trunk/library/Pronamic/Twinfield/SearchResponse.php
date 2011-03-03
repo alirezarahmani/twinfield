@@ -3,18 +3,20 @@
 namespace Pronamic\Twinfield;
 
 /**
- * Title: Twinfield
+ * Title: Search response
  * Description: 
  * Copyright: Copyright (c) 2005 - 2010
  * Company: Pronamic
  * @author Remco Tolsma
  * @version 1.0
  */
-class Twinfield {
+class SearchResponse {
 	/**
-	 * Twinfield XML namespace
+	 * Get the data of this search response
 	 * 
-	 * @var string
+	 * @return FinderData
 	 */
-	const XML_NAMESPACE = 'http://www.twinfield.com/';
+	public function getData() {
+		return $this->data;
+	}
 }
