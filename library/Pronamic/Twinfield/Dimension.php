@@ -3,18 +3,22 @@
 namespace Pronamic\Twinfield;
 
 /**
- * Title: Twinfield
+ * Title: Dimension
  * Description: 
  * Copyright: Copyright (c) 2005 - 2010
  * Company: Pronamic
  * @author Remco Tolsma
  * @version 1.0
  */
-class Twinfield {
+class Dimension {
 	/**
-	 * Twinfield XML namespace
+	 * Eerste vrije code
 	 * 
-	 * @var string
+	 * @param $type
+	 * 
+	 * @return 
 	 */
-	const XML_NAMESPACE = 'http://www.twinfield.com/';
+	public static function firstFreeCode($type) {
+		
+	}
 }
