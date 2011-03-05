@@ -1,12 +1,13 @@
 <?php
 
-namespace Pronamic\Twinfield;
+require_once 'library/bootstrap.php';
+
 
 $username = 'your_username';
 $password = 'your_password';
 $organisation = 'your_organisation';
 
-$twinfieldClient = new TwinfieldClient();
+$twinfieldClient = new Pronamic\Twinfield\TwinfieldClient();
 
 $result = $twinfieldClient->logon($username, $password, $organisation);
 

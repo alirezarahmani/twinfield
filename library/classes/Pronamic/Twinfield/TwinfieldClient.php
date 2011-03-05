@@ -2,16 +2,16 @@
 
 namespace Pronamic\Twinfield;
 
+use Pronamic\Twinfield\XML\OfficeParser;
+
 /**
  * Title: Twinfield client
  * Description: 
- * Copyright: Copyright (c) 2005 - 2010
+ * Copyright: Copyright (c) 2005 - 2011
  * Company: Pronamic
  * @author Remco Tolsma
  * @version 1.0
  */
-use Pronamic\Twinfield\XML\OfficeParser;
-
 class TwinfieldClient {
 	/**
 	 * The Twinfield SOAP WSDL URI
@@ -160,7 +160,7 @@ echo '</pre>';
 			// Create an SOAP input header for further SOAP request
 			$this->soapInputHeader = new \SoapHeader(Twinfield::XML_NAMESPACE, 'Header', array('SessionID' => $this->sessionId));
 
-			// Create a new SOAP client that connects to the clust
+			// Create a new SOAP client that connects to the cluster
 			$wsdlClusterUrl = sprintf(self::SOAP_WSDL_CLUSTER_URI, $this->cluster);
 
 			$this->soapClusterClient = new \SoapClient($wsdlClusterUrl);
