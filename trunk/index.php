@@ -2,6 +2,7 @@
 
 require_once 'library/bootstrap.php';
 
+require_once 'config.php';
 
 $username = 'your_username';
 $password = 'your_password';
@@ -9,7 +10,7 @@ $organisation = 'your_organisation';
 
 $twinfieldClient = new Pronamic\Twinfield\TwinfieldClient();
 
-$result = $twinfieldClient->logon($username, $password, $organisation);
+$result = $twinfieldClient->logon(TWINFIELD_USERNAME, TWINFIELD_PASSWORD, TWINFIELD_ORGANISATION);
 
 if($result): ?>
 
