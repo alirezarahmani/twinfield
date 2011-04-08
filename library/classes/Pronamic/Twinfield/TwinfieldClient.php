@@ -135,7 +135,7 @@ class TwinfieldClient {
 
 		$logonResponse = $this->soapLoginClient->logon($parameters);
 
-		if($logonResponse->LogonResult == 'Ok') {
+		if($logonResponse->LogonResult == LogonResult::OK) {
 			// Read the SOAP client last response
 			$response = $this->soapLoginClient->__getLastResponse();
 /*
