@@ -195,7 +195,49 @@ echo '</pre>';
 		return $offices;
 	}
 
-	
+	///////////////////////////////////////////////////////////////////////////	
+
+	public function readSalesInvoice($office, $type, $code) {
+		$xml = new \SimpleXMLElement('<read />');
+		$xml->addChild('type', Read::TYPE_SALES_INVOICE);
+		$xml->addChild('office', $office);
+		$xml->addChild('code', $type);
+		$xml->addChild('invoicenumber', $code);
+
+		$result = $this->soapCall('ProcessXmlString', array(array('xmlRequest' => $xml->asXML())));
+
+		$xml = simplexml_load_string($result->ProcessXmlStringResult);
+
+		$result = filter_var($xml['result'], FILTER_VALIDATE_BOOLEAN);
+
+		if($result) {
+			return XML\SalesInvoiceParser::parse($xml);
+		} else {
+			return null;
+		}
+	}
+
+	///////////////////////////////////////////////////////////////////////////	
+
+	public function readTransaction($office, $code, $number) {
+		$xml = new \SimpleXMLElement('<read />');
+		$xml->addChild('type', Read::TYPE_TRANSACTION);
+		$xml->addChild('office', $office);
+		$xml->addChild('code', $code);
+		$xml->addChild('number', $number);
+
+		$result = $this->soapCall('ProcessXmlString', array(array('xmlRequest' => $xml->asXML())));
+		
+		$xml = simplexml_load_string($result->ProcessXmlStringResult);
+
+		if($result) {
+			return XML\TransactionParser::parse($xml);
+		} else {
+			return null;
+		}
+
+		return $result;
+	}
 
 	///////////////////////////////////////////////////////////////////////////	
 

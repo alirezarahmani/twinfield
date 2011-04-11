@@ -13,9 +13,25 @@ include 'table-offices.php';
 
 ?>
 
-<h2>Invoice</h2>
+<h2>Sales invoice</h2>
 
+<?php
 
+$salesInvoice = $twinfieldClient->readSalesInvoice($office->getCode(), 'FACTUUR', '110082');
+
+include 'sales-invoice.php';
+
+?>
+
+<h2>Transaction</h2>
+
+<?php 
+
+$transaction = $twinfieldClient->readTransaction($office->getCode(), 'VRK', '201100075');
+
+include 'transaction.php';
+
+?>
 
 <h2>Finder</h2>
 
