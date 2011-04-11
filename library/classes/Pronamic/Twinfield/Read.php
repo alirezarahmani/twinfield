@@ -58,7 +58,7 @@ class Read {
 	 * 
 	 * @var string
 	 */
-	const TYPE_SALES_INVOICE = 'transaction';
+	const TYPE_TRANSACTION = 'transaction';
 
 	/**
 	 * Returns the user settings
